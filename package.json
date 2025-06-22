@@ -1,0 +1,35 @@
+{
+  "name": "bookshelf-plugin",
+  "version": "1.0.0",
+  "description": "Plugin de WordPress para gestionar libros con React",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "dev": "wp-scripts start",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "react",
+    "books",
+    "library"
+  ],
+  "author": "Stiven Colorado",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.19.0"
+  },
+  "dependencies": {
+    "@wordpress/api-fetch": "^6.44.0",
+    "@wordpress/components": "^25.13.0",
+    "@wordpress/element": "^5.24.0",
+    "@wordpress/i18n": "^4.47.0",
+    "@wordpress/icons": "^9.38.0",
+    "@wordpress/notices": "^4.15.0"
+  }
+}

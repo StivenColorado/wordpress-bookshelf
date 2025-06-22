@@ -1,0 +1,48 @@
+
+---
+
+## ✅ `.gitignore` — Adaptado a React, PHP y WordPress
+
+```gitignore
+# Node.js
+node_modules/
+dist/
+.vite/
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/debug.log
+
+# Otros archivos sensibles
+*.log
+*.zip
+*.bak
+*.sql
+*.sqlite
+
+# React build (opcional si se genera)
+react-frontend/build/
