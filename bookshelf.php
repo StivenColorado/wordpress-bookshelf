@@ -19,6 +19,7 @@ define('BOOKSHELF_PLUGIN_PATH', plugin_dir_path(__FILE__));
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/cpt-book.php';
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/taxonomy-genre.php';
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/rest-api.php';
+require_once plugin_dir_path(__FILE__) . 'includes/seed.php';
 
 // Activación del plugin
 function bookshelf_activate() {

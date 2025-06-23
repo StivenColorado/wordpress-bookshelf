@@ -5,6 +5,25 @@ if (!defined('ABSPATH')) {
 
 function bookshelf_register_api_routes() {
     $namespace = 'bookshelf/v1';
+    
+    // Endpoint para ejecutar las semillas
+    register_rest_route($namespace, '/seed', [
+        'methods' => 'GET',
+        'callback' => 'bookshelf_execute_seed',
+        'permission_callback' => function() {
+            return current_user_can('manage_options');
+        },
+        'args' => [
+            'total' => [
+                'description' => 'Número de libros a generar',
+                'type' => 'integer',
+                'default' => 20,
+                'minimum' => 1,
+                'maximum' => 100,
+                'sanitize_callback' => 'absint',
+            ],
+        ],
+    ]);
 
     // Ruta para listar libros con filtros y paginación
     register_rest_route($namespace, '/books', [
@@ -454,6 +473,25 @@ function bookshelf_get_genres($request) {
     return $genres;
 }
 
+// Función para ejecutar las semillas de libros
+function bookshelf_execute_seed($request) {
+    // Incluir el archivo de semillas
+    require_once plugin_dir_path(dirname(__FILE__)) . 'includes/seed.php';
+    
+    // Obtener el número de libros a generar (por defecto: 20)
+    $total = $request->get_param('total') ? absint($request->get_param('total')) : 20;
+    
+    // Ejecutar la función de semillas
+    $result = bookshelf_seed_books($total);
+    
+    // Retornar el resultado
+    if (is_wp_error($result)) {
+        return $result;
+    }
+    
+    return $result;
+}
+
 // Función para obtener estadísticas
 function bookshelf_get_stats($request) {
     $total_books = wp_count_posts('book');
@@ -543,3 +581,4 @@ function bookshelf_format_book($post) {
         'featured_image' => get_the_post_thumbnail_url($post->ID, 'medium'),
     ];
 }
+

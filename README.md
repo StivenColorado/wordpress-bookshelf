@@ -21,6 +21,7 @@ Plugin de gestión de libros desarrollado con WordPress + React para demostraci�
 1. Descarga y descomprime en `/wp-content/plugins/`
 2. Activa el plugin desde el admin de WordPress
 3. Accede a "BookShelf" en el menú lateral
+4. agrega bookshelf como shortcode en el editor de wordpress
 
 ## 📁 Estructura
 
@@ -43,6 +44,9 @@ npm start
 
 # Build para producción
 npm run build
+
+# Semillas - 20 registros por defecto
+wp bookshelf seed
 ```
 
 ## 📡 Endpoints API - se usa WP_REST_Response y no WP_SEND_JSON lo cual no es visible ante una URL
