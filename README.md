@@ -62,3 +62,6 @@ wp bookshelf seed
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/genres - Listar generos
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books?genre=terror Listar libros por taxonomia ()
 
+![image](https://github.com/user-attachments/assets/852c51d8-59cb-4279-b6f4-a2b92b7b3d4c)
+
+
