@@ -58,6 +58,7 @@ wp bookshelf seed
 
 
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books - listar libro
+- GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books?page=2&per_page=2 - listar libros paginados
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books/56 - buscar libro por id
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/genres - Listar generos
 - GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books?genre=terror Listar libros por taxonomia ()
