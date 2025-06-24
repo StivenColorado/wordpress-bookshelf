@@ -19,7 +19,7 @@ define('BOOKSHELF_PLUGIN_PATH', plugin_dir_path(__FILE__));
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/cpt-book.php';
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/taxonomy-genre.php';
 require_once BOOKSHELF_PLUGIN_PATH . 'includes/rest-api.php';
-require_once plugin_dir_path(__FILE__) . 'includes/seed.php';
+require_once plugin_dir_path(__FILE__) . 'includes/cli/seed.php';
 
 // Activación del plugin
 function bookshelf_activate() {
@@ -60,7 +60,7 @@ function bookshelf_enqueue_assets() {
         );
         
         // Localizar script con datos necesarios
-        wp_localize_script('bookshelf-react-app', 'bookshelfData', [
+        wp_localize_script('bookshelf-react-app', 'bookshelfData', [ //inyectar variables locales
             'apiUrl' => rest_url('bookshelf/v1/'),
             'nonce' => wp_create_nonce('wp_rest'),
             'canEdit' => current_user_can('edit_posts'),
@@ -81,7 +81,7 @@ function bookshelf_shortcode($atts = []) {
         'view' => 'list', // list, form
     ], $atts);
     
-    return '<div id="bookshelf-root" data-view="' . esc_attr($atts['view']) . '"></div>';
+    return '<div id="bookshelf-root" data-view="' . esc_attr($atts['view']) . '"></div>'; //punto de montaje
 }
 add_shortcode('bookshelf', 'bookshelf_shortcode');
 
