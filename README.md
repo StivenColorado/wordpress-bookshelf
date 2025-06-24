@@ -49,9 +49,16 @@ npm run build
 wp bookshelf seed
 ```
 
-## 📡 Endpoints API - se usa WP_REST_Response y no WP_SEND_JSON lo cual no es visible ante una URL
+## 📡 Endpoints API - se usa WP_REST_Response y no WP_SEND_JSON 
 
 - `GET /wp-json/bookshelf/v1/books` - Lista libros
 - `POST /wp-json/bookshelf/v1/books` - Crear libro
 - `PUT /wp-json/bookshelf/v1/books/{id}` - Actualizar libro
 - `DELETE /wp-json/bookshelf/v1/books/{id}` - Eliminar libro
+
+
+- GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books - listar libro
+- GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books/56 - buscar libro por id
+- GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/genres - Listar generos
+- GET http://localhost/wordpress-bookshelf/wp-json/bookshelf/v1/books?genre=terror Listar libros por taxonomia ()
+

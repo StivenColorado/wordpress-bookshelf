@@ -40,7 +40,7 @@ function bookshelf_register_genre_taxonomy() {
         'rewrite' => [
             'slug' => 'genero',
             'with_front' => false,
-            'hierarchical' => true,
+            'hierarchical' => true, //se establece jerarquia
         ],
         'query_var' => true,
         'capabilities' => [
